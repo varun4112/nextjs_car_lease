@@ -1,0 +1,136 @@
+"use client"
+import React, { useEffect, useState } from 'react'
+import styles from "./Subscribe.module.css"
+import Image from 'next/image'
+
+function Subscribe() {
+
+    const [name, setName] = useState<string>("")
+    const [nameError, setNameError] = useState<string>("")
+    const validateName = () => {
+        if (name.length > 0 && name.length <= 3) {
+            setNameError("Invalid Name! Name length should be greater than 3")
+        }
+        else {
+            setNameError("")
+        }
+    }
+
+    useEffect(() => {
+        validateName()
+    }, [name])
+
+    const [email, setEmail] = useState<string>("")
+    console.log("email", email)
+    const [emailError, setEmailError] = useState<string>("")
+
+
+    const validateEmail = () => {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email.length == 0) {
+            setEmailError("")
+        }
+        else if (!emailPattern.test(email)) {
+            setEmailError("Please enter a valid email address");
+            return false;
+        } else {
+            setEmailError("");
+            return true;
+        }
+    };
+
+    useEffect(() => {
+        validateEmail()
+    }, [email])
+
+
+    return (
+        <div className={styles.subscribe}>
+            <div className={styles.subscribeDiv1}>
+                <h3 className={styles.subscribeDiv1Heading}>
+                    Subscribe here for exclusive offers and updates!
+                </h3>
+                <div className={styles.subscribeDiv1InputDiv}>
+                    <input type="text" id="name" placeholder="Name" required onChange={(e) => {
+                        setName(e.target.value)
+                    }
+                    } />
+                    <input type="email" id="email" placeholder="Email" required onChange={(e) => {
+                        setEmail(e.target.value)
+                    }} />
+
+                </div>
+                <small className={styles.error} id="nameError">{nameError}</small>
+                <small className={styles.error} id="emailError">{emailError}</small>
+                <p className={styles.subscribeDiv1Para}>
+                    Don't miss out! enter your email and your name, then hit subscribe
+                    to unlock a world of special offers and details.
+                </p>
+                <button className={styles.subscribeButton}>Subscribe</button>
+            </div>
+
+            <div className={styles.subscribeDiv2}>
+                <Image
+                    className={styles.mobileAppImg}
+                    src="logos/Rectangle.svg"
+                    alt=""
+                    width={249}
+                    height={435}
+                />
+                <div className={styles.DownloadLinkDiv}>
+                    <p className={styles.downloadLinkPara}>
+                        Enter your number and receive <br />
+                        a direct link to download the app
+                    </p>
+                    <input
+                        className={styles.subscribePhoneInput}
+                        type="phone"
+                        placeholder="Enter Phone Number" required
+                    />
+                    <button className={styles.getLinkButton}>Get the link</button>
+                    <p className={styles.getItOnPara}>Get it on</p>
+                    <div className={styles.StoreLinks}>
+                        <Image src="logos/googlePlay.svg" alt="" width={103} height={30} />
+                        <Image src="logos/appleStore.svg" alt="" width={103} height={30} />
+                    </div>
+                </div>
+            </div>
+
+            {/* mobile view */}
+            <div className={styles.subscribeDiv2Mobile}>
+                <div className={styles.subscribeDiv2Main}>
+                    <Image
+                        className={styles.mobileAppImgMV}
+                        src="logos/Rectangle.svg"
+                        alt=""
+                        width={136}
+                        height={245}
+                    />
+                    <div className={styles.DownloadLinkDiv}>
+                        <p className={styles.getItOnParaMV}>Get it on</p>
+                        <div className={styles.StoreLinksMV}>
+                            <Image src="logos/googlePlay.svg" alt="" width={103} height={30} />
+                            <br />
+                            <Image src="logos/appleStore.svg" alt="" width={103} height={30} />
+                        </div>
+                        <p className={styles.downloadLinkParaMV}>
+                            Enter your number and receive a direct link <br />to download
+                            the app
+                        </p>
+                    </div>
+                </div>
+                <div className={styles.downloadInputDiv}>
+                    <input
+                        className={styles.subscribePhoneInputMV}
+                        type="phone"
+                        placeholder="Enter Phone Number"
+                    />
+                    <button className={styles.getLinkButton}>Get the link</button>
+                </div>
+            </div>
+
+        </div>
+    )
+}
+
+export default Subscribe
