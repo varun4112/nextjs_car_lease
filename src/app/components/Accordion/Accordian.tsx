@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import styles from "./Accordian.module.css"
+import Image from 'next/image';
 
 interface faqInterface {
     id: number;
@@ -14,8 +15,8 @@ interface AccordionProps {
 
 const Accordian: React.FC<AccordionProps> = ({ faqs }) => {
 
+    
     const [active, setActive] = useState<number | null>(null);
-
     const handleToggle = (index: number) => {
         setActive(active === index ? null : index);
     };
@@ -29,10 +30,12 @@ const Accordian: React.FC<AccordionProps> = ({ faqs }) => {
                         onClick={() => { handleToggle(index) }}
                     >
                         {faq.question}
-                        <img
+                        <Image
                             className={`${styles.rotateImage} ${active === index ? styles.active : ''}`}
                             src="logos/xmarkxmark.svg"
                             alt="toggle icon"
+                            width={24}
+                            height={24}
                         />
                     </button>
                     <div

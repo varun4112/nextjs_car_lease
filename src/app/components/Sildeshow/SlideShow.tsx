@@ -15,15 +15,17 @@ function SlideShow() {
     ];
 
 
+    // useEffect to change Slide
     useEffect(() => {
         const intervalId = setInterval(() => {
             setSlideIndex(prevIndex => (prevIndex + 1) % slides.length);
-        }, 2000); // Change slide every 2 seconds
+        }, 2000);
         return () => clearInterval(intervalId);
     }, []);
 
     return (
 
+        // SlideShow Slides
         <div className={styles.slideshowContainer}>
             {slides.map((slide, index) => (
                 <div
@@ -34,6 +36,7 @@ function SlideShow() {
                 </div>
             ))}
 
+            {/* SlideShow Dot*/}
             <div className={styles.dotContainer}>
                 {slides.map((_, index) => (
                     <span

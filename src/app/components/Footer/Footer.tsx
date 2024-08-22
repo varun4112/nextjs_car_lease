@@ -1,12 +1,32 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./Footer.module.css";
+import Link from "next/link";
 
 function Footer() {
+
+
+  // siter company data
+  const companies = [
+    { id: 1, name: "Hospitality", link: "" },
+    { id: 2, name: "Real Estate", link: "" },
+    { id: 3, name: "Publishing", link: "" },
+    { id: 4, name: "Automotive", link: "" },
+    { id: 5, name: "Vehicle Leasing", link: "" },
+  ]
+
+  // socail media link with images
+  const socialLinks = [
+    { id: 1, name: "facebook", imgUrl: 'logos/Social IconsfacebookLight.svg', url: 'https://www.facebook.com/' },
+    { id: 2, name: "twitter", imgUrl: 'logos/Social IconsxtwitterLight.svg', url: 'https://x.com/' },
+    { id: 3, name: "Instagram", imgUrl: 'logos/Social IconsinstagramLight.svg', url: "https://www.instagram.com/" },
+    { id: 4, name: "LinkedIn", imgUrl: 'logos/Social IconslinkedInLight.svg', url: 'https://www.linkedin.com/' },
+    { id: 5, name: "Youtube", imgUrl: 'logos/Social IconsyoutubeLight.svg', url: 'https://www.youtube.com/' }
+  ]
+
   return (
     <div>
       <footer>
-        {/* <!-- footer mobile view --> */}
         <div className={styles.footerMobile}>
           <div className={styles.MediaLinks}>
             <Image
@@ -16,46 +36,17 @@ function Footer() {
               alt="alhabtoor logo"
             />
             <ul>
-              <li>
-                <Image
-                  src="logos\Social Iconsfacebook.svg"
-                  alt="facebook logo"
-                  height={17}
-                  width={17}
-                />
-              </li>
-              <li>
-                <Image
-                  src="logos\Social Iconsxtwitter.svg"
-                  alt="xtwitter logo"
-                  height={17}
-                  width={17}
-                />
-              </li>
-              <li>
-                <Image
-                  src="logos\Social Iconsinsta.svg"
-                  alt="instaLogo"
-                  height={17}
-                  width={17}
-                />
-              </li>
-              <li>
-                <Image
-                  src="logos\Social Iconslinkedin.svg"
-                  alt="Linkedin Logo"
-                  height={17}
-                  width={17}
-                />
-              </li>
-              <li>
-                <Image
-                  src="logos\Social Iconsyoutube.svg"
-                  alt=" Youtube Logo"
-                  height={17}
-                  width={17}
-                />
-              </li>
+              {socialLinks.map((item) => (
+                <li key={item.id}>
+                  <Link href={item.url}><Image className={styles.blackLogos}
+                    src={item.imgUrl}
+                    alt={item.name}
+                    width={17}
+                    height={17}
+                  /></Link>
+                </li>
+              ))}
+
             </ul>
           </div>
           <div className={styles.bottomNavigation}>
@@ -92,7 +83,7 @@ function Footer() {
             <div className={styles.secureDiv}>
               <Image
                 className={styles.secureImg}
-                src="public\logos\Group 1261156497secure.svg"
+                src="logos\Group 1261156497secure.svg"
                 alt=""
                 width={59}
                 height={27}
@@ -142,57 +133,25 @@ function Footer() {
               <div className={styles.groupNavigationDesktop}>
                 <h3>Al Habtoor Companies</h3>
                 <ul className={styles.companyUl1Desk}>
-                  <li>Hospitality</li>
-                  <li>Real Estate</li>
-                  <li>Publishing</li>
-                  <li>Automotive</li>
-                  <li>Vehicle Leasing</li>
+                  {companies.map((item) => (
+                    <li key={item.id}><Link href={item.link}>{item.name}</Link></li>
+                  ))}
                 </ul>
               </div>
             </div>
             <div className={styles.col3}>
               <p>Follow us on</p>
               <ul>
-                <li>
-                  <Image
-                    src="logos\Social IconsfacebookLight.svg"
-                    alt=""
-                    width={17}
-                    height={17}
-                  />
-                </li>
-                <li>
-                  <Image
-                    src="logos\Social IconsxtwitterLight.svg"
-                    alt=""
-                    width={17}
-                    height={17}
-                  />
-                </li>
-                <li>
-                  <Image
-                    src="logos\Social IconsinstagramLight.svg"
-                    alt=""
-                    width={17}
-                    height={17}
-                  />
-                </li>
-                <li>
-                  <Image
-                    src="logos\Social IconslinkedInLight.svg"
-                    alt=""
-                    width={17}
-                    height={17}
-                  />
-                </li>
-                <li>
-                  <Image
-                    src="logos\Social IconsyoutubeLight.svg"
-                    alt=""
-                    width={17}
-                    height={17}
-                  />
-                </li>
+                {socialLinks.map((item) => (
+                  <li key={item.id}>
+                    <Link href={item.url}><Image
+                      src={item.imgUrl}
+                      alt={item.name}
+                      width={17}
+                      height={17}
+                    /></Link>
+                  </li>
+                ))}
               </ul>
               <div className={styles.siteSecurityImages}>
                 <Image

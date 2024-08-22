@@ -169,6 +169,10 @@
     width: 149px;
 }
 
+.error{
+    color: #E21E26;
+    
+}
 
 @media only screen and (max-width: 786px) {
 

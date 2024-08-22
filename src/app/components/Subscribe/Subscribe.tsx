@@ -2,35 +2,38 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./Subscribe.module.css"
 import Image from 'next/image'
+import GetTheLink from '../GetTheLink/GetTheLink'
 
 function Subscribe() {
 
+    // setting the state for name
     const [name, setName] = useState<string>("")
     const [nameError, setNameError] = useState<string>("")
+    // validating the name
     const validateName = () => {
         if (name.length > 0 && name.length <= 3) {
+            // setting the error message
             setNameError("Invalid Name! Name length should be greater than 3")
         }
         else {
             setNameError("")
         }
     }
-
     useEffect(() => {
         validateName()
     }, [name])
 
+    //State for storing error message
     const [email, setEmail] = useState<string>("")
-    console.log("email", email)
     const [emailError, setEmailError] = useState<string>("")
-
-
+    // email validation
     const validateEmail = () => {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (email.length == 0) {
             setEmailError("")
         }
         else if (!emailPattern.test(email)) {
+            // Setting the error message
             setEmailError("Please enter a valid email address");
             return false;
         } else {
@@ -38,7 +41,6 @@ function Subscribe() {
             return true;
         }
     };
-
     useEffect(() => {
         validateEmail()
     }, [email])
@@ -51,6 +53,7 @@ function Subscribe() {
                     Subscribe here for exclusive offers and updates!
                 </h3>
                 <div className={styles.subscribeDiv1InputDiv}>
+                    {/* input feilds for email and name */}
                     <input type="text" id="name" placeholder="Name" required onChange={(e) => {
                         setName(e.target.value)
                     }
@@ -58,10 +61,11 @@ function Subscribe() {
                     <input type="email" id="email" placeholder="Email" required onChange={(e) => {
                         setEmail(e.target.value)
                     }} />
-
                 </div>
-                <small className={styles.error} id="nameError">{nameError}</small>
-                <small className={styles.error} id="emailError">{emailError}</small>
+
+                {/* paragraphs for error */}
+                <p className={styles.error} id="nameError">{nameError}</p>
+                <p className={styles.error} id="emailError">{emailError}</p>
                 <p className={styles.subscribeDiv1Para}>
                     Don't miss out! enter your email and your name, then hit subscribe
                     to unlock a world of special offers and details.
@@ -82,12 +86,7 @@ function Subscribe() {
                         Enter your number and receive <br />
                         a direct link to download the app
                     </p>
-                    <input
-                        className={styles.subscribePhoneInput}
-                        type="phone"
-                        placeholder="Enter Phone Number" required
-                    />
-                    <button className={styles.getLinkButton}>Get the link</button>
+                    <GetTheLink />
                     <p className={styles.getItOnPara}>Get it on</p>
                     <div className={styles.StoreLinks}>
                         <Image src="logos/googlePlay.svg" alt="" width={103} height={30} />
@@ -120,12 +119,8 @@ function Subscribe() {
                     </div>
                 </div>
                 <div className={styles.downloadInputDiv}>
-                    <input
-                        className={styles.subscribePhoneInputMV}
-                        type="phone"
-                        placeholder="Enter Phone Number"
-                    />
-                    <button className={styles.getLinkButton}>Get the link</button>
+                    {/* Component for phone number with validation*/}
+                    <GetTheLink />
                 </div>
             </div>
 

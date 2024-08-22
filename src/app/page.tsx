@@ -5,13 +5,15 @@ import Faq from "./components/Faq/Faq";
 import SlideShow from "./components/Sildeshow/SlideShow";
 import PopularCars from "./components/PopularCars/PopularCars";
 import Subscribe from "./components/Subscribe/Subscribe";
+import BookCar from "./components/BookCar/BookCar";
 
 export default function Home() {
   return (
     <main>
+      <BookCar />
       <SlideShow />
-      <PopularCars/>
-      <Subscribe/>
+      <PopularCars />
+      <Subscribe />
       <RentLease />
       <Locations />
       <Faq />

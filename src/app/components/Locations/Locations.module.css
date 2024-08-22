@@ -38,6 +38,10 @@
     margin-bottom: 65px;
 }
 
+.locationLi:last-child {
+    border-right: 0;
+}
+
 .locationLi span {
     margin-left: 16px;
     color: #FFFFFF;
@@ -98,6 +102,8 @@
         text-align: left;
 
     }
+
+
 
     .locationLi span {
         margin-left: 16px;

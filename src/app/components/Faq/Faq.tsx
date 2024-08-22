@@ -10,6 +10,7 @@ function Faq() {
         answer?: string;
     }
 
+    // Array with data for each faq
     const faqs = [{
         id: 1, question: " What is my eligibility to book a car?", answer: "You should be of 18 years old above and you must possess a valid driving license"
     },
