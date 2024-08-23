@@ -67,7 +67,7 @@ function Subscribe() {
                 <p className={styles.error} id="nameError">{nameError}</p>
                 <p className={styles.error} id="emailError">{emailError}</p>
                 <p className={styles.subscribeDiv1Para}>
-                    Don't miss out! enter your email and your name, then hit subscribe
+                    Dont miss out! enter your email and your name, then hit subscribe
                     to unlock a world of special offers and details.
                 </p>
                 <button className={styles.subscribeButton}>Subscribe</button>
