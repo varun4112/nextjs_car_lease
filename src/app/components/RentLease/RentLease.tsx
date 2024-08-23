@@ -9,7 +9,7 @@ function RentLease() {
       <h2 className={styles.rentStepsHeading}>Rent/Lease In three easy steps</h2>
       <div className={styles.rentStepsRow}>
 
-        {/* Mapping cards based on data above */}
+        {/* Mapping cards based on rentLeaseData */}
         {rentLeaseData.map((item) => (
           <div className={styles.rentStepCols} key={item.id}>
             <h3 className={styles.rentSteph3}>0{item.id}</h3>
@@ -27,6 +27,8 @@ function RentLease() {
             </div>
           </div>
         ))}
+
+        
       </div>
     </div >
   )

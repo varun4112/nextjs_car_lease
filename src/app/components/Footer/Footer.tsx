@@ -10,14 +10,19 @@ function Footer() {
     <div>
       <footer>
         <div className={styles.footerMobile}>
+
           <div className={styles.MediaLinks}>
+            {/* company logo */}
             <Image
               src="logos\Group 1261156489alhabtoor.svg"
               height={46}
               width={113}
               alt="alhabtoor logo"
             />
+
+            {/* Social Media Links  */}
             <ul>
+              {/* Mapping links based on socialLinksFooter */}
               {socialLinksFooter.map((item) => (
                 <li key={item.id}>
                   <Link href={item.url}><Image className={styles.blackLogos}
@@ -28,9 +33,10 @@ function Footer() {
                   /></Link>
                 </li>
               ))}
-
             </ul>
           </div>
+
+
           <div className={styles.bottomNavigation}>
             <ul className={styles.navul}>
               <li>Home</li>
@@ -89,6 +95,8 @@ function Footer() {
                 height={140}
               />
             </div>
+
+
             <div className={styles.col2}>
               {" "}
               <div className={styles.bottomNavDesktop}>
@@ -112,8 +120,11 @@ function Footer() {
                   <li>Terms & Conditions</li>
                 </ul>
               </div>
+
+
               <div className={styles.groupNavigationDesktop}>
                 <h3>Al Habtoor Companies</h3>
+                {/* mapping sister companies based on companies data */}
                 <ul className={styles.companyUl1Desk}>
                   {companies.map((item) => (
                     <li key={item.id}><Link href={item.link}>{item.name}</Link></li>
@@ -121,9 +132,12 @@ function Footer() {
                 </ul>
               </div>
             </div>
+
+
             <div className={styles.col3}>
               <p>Follow us on</p>
               <ul>
+                {/* Mapping links based on socialLinksFooter */}
                 {socialLinksFooter.map((item) => (
                   <li key={item.id}>
                     <Link href={item.url}><Image

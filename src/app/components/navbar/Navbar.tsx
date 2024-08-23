@@ -94,7 +94,7 @@ function Navbar() {
           <div className={styles.navDropOff}>
             <p className={styles.navPara}>
               Sunday Pick Up/Drop-Off only at Dubai Silicon Oasis & Habtoor
-              Grand Sales Counters | All Rates inclusive of VAT. T&C’s apply |
+              Grand Sales Counters | All Rates inclusive of VAT. T&Cs apply |
               Follow us on Social Media for New Offers
             </p>
           </div>

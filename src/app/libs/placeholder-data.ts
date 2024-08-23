@@ -1,3 +1,76 @@
+// Placeholder data for various components
+
+// Navigation Links
+const nav = [
+  { id: 1, link: "", title: "About" },
+  { id: 2, link: "", title: "Offers" },
+  { id: 3, link: "", title: "Corporate" },
+  { id: 4, link: "", title: "Personal" },
+  { id: 5, link: "", title: "Location" },
+  { id: 6, link: "", title: "Contact Us" },
+]
+
+// Navbar Social Links
+const socialLinksNav = [
+  { id: 1, name: "facebook", imgUrl: 'logos/Vectorfacebook.svg', url: 'https://www.facebook.com/' },
+  { id: 2, name: "Instagram", imgUrl: 'logos/Vectorinsta.svg', url: "https://www.instagram.com/" },
+  { id: 3, name: "twitter", imgUrl: 'logos/layer1x-twitter.svg', url: 'https://x.com/' },
+  { id: 4, name: "LinkedIn", imgUrl: 'logos/VectorlinkedIn.svg', url: 'https://www.linkedin.com/' },
+]
+
+// Data for slide show 
+const slides = [
+  { id: 'slide1', imageUrl: '/logos/Mitsubishi.svg' },
+  { id: 'slide2', imageUrl: '/logos/blue-car-speed-motion-stretch-style.jpg' },
+  { id: 'slide3', imageUrl: '/logos/Mitsubishi.svg' },
+  { id: 'slide4', imageUrl: '/logos/blue-car-speed-motion-stretch-style.jpg' },
+];
+
+// popular car Info
+const popCars =[
+  {
+    id: 1,
+    carName: "Mitsubhishi Eclipse",
+    description: "Eclipse Cross is a fusion of sharp coupe looks and dynamic SUV mobility with signature Mitsubishi styling, technology and driving confidence.",
+    imgUrl: "/logos/Mask groupmitsubhishi.svg",
+    gear: "Automatic",
+    door: 5,
+    people: 6,
+    price: 2700
+  },
+  {
+    id: 2,
+    carName: "Jac J7",
+    description: "S3 Plus has been rated Five-Star in C-NCAP including front impact, side impact, frontal side impact & Whipping test.",
+    imgUrl: "/logos/Rectangle 23951jac.svg",
+    gear: "Automatic",
+    door: 5,
+    people: 6,
+    price: 2700
+  },
+  {
+    id: 3,
+    carName: "Mitsubhishi Eclipse",
+    description: "Eclipse Cross is a fusion of sharp coupe looks and dynamic SUV mobility with signature Mitsubishi styling, technology and driving confidence.",
+    imgUrl: "/logos/Mask groupmitsubhishi.svg",
+    gear: "Automatic",
+    door: 5,
+    people: 6,
+    price: 2700
+  },
+  {
+    id: 4,
+    carName: "Jac J7",
+    description: "S3 Plus has been rated Five-Star in C-NCAP including front impact, side impact, frontal side impact & Whipping test.",
+    imgUrl: "/logos/Rectangle 23951jac.svg",
+    gear: "Automatic",
+    door: 5,
+    people: 6,
+    price: 2700
+  },
+]
+
+// Data for faq accordion
 const faqs = [{
     id: 1, question: " What is my eligibility to book a car?", answer: "You should be of 18 years old above and you must possess a valid driving license"
 },
@@ -18,24 +91,10 @@ const faqs = [{
 }
 ]
 
-const companies = [
-    { id: 1, name: "Hospitality", link: "" },
-    { id: 2, name: "Real Estate", link: "" },
-    { id: 3, name: "Publishing", link: "" },
-    { id: 4, name: "Automotive", link: "" },
-    { id: 5, name: "Vehicle Leasing", link: "" },
-]
-
-const socialLinksFooter = [
-    { id: 1, name: "facebook", imgUrl: 'logos/Social IconsfacebookLight.svg', url: 'https://www.facebook.com/' },
-    { id: 2, name: "twitter", imgUrl: 'logos/Social IconsxtwitterLight.svg', url: 'https://x.com/' },
-    { id: 3, name: "Instagram", imgUrl: 'logos/Social IconsinstagramLight.svg', url: "https://www.instagram.com/" },
-    { id: 4, name: "LinkedIn", imgUrl: 'logos/Social IconslinkedInLight.svg', url: 'https://www.linkedin.com/' },
-    { id: 5, name: "Youtube", imgUrl: 'logos/Social IconsyoutubeLight.svg', url: 'https://www.youtube.com/' }
-]
-
+// comapny loactions
 const locations = ["Dubai", "Abu Dhabi", "Sharjah", "Fujairah", "Ras Al Khaimah"]
 
+// rent lease steps data
 const rentLeaseData = [
     {
       id: 1,
@@ -52,74 +111,26 @@ const rentLeaseData = [
       description: 'Make payment and book the car. Select an option to either have the car delivered to your location or pick it up directly from us.',
       imgUrl: 'logos/Frame 1171274969car.svg'
     }
-  ]
-
-  const slides = [
-    { id: 'slide1', imageUrl: '/logos/Mitsubishi.svg' },
-    { id: 'slide2', imageUrl: '/logos/blue-car-speed-motion-stretch-style.jpg' },
-    { id: 'slide3', imageUrl: '/logos/Mitsubishi.svg' },
-    { id: 'slide4', imageUrl: '/logos/blue-car-speed-motion-stretch-style.jpg' },
-];
-
-const popCars =[
-    {
-      id: 1,
-      carName: "Mitsubhishi Eclipse",
-      description: "Eclipse Cross is a fusion of sharp coupe looks and dynamic SUV mobility with signature Mitsubishi styling, technology and driving confidence.",
-      imgUrl: "/logos/Mask groupmitsubhishi.svg",
-      gear: "Automatic",
-      door: 5,
-      people: 6,
-      price: 2700
-    },
-    {
-      id: 2,
-      carName: "Jac J7",
-      description: "S3 Plus has been rated Five-Star in C-NCAP including front impact, side impact, frontal side impact & Whipping test.",
-      imgUrl: "/logos/Rectangle 23951jac.svg",
-      gear: "Automatic",
-      door: 5,
-      people: 6,
-      price: 2700
-    },
-    {
-      id: 3,
-      carName: "Mitsubhishi Eclipse",
-      description: "Eclipse Cross is a fusion of sharp coupe looks and dynamic SUV mobility with signature Mitsubishi styling, technology and driving confidence.",
-      imgUrl: "/logos/Mask groupmitsubhishi.svg",
-      gear: "Automatic",
-      door: 5,
-      people: 6,
-      price: 2700
-    },
-    {
-      id: 4,
-      carName: "Jac J7",
-      description: "S3 Plus has been rated Five-Star in C-NCAP including front impact, side impact, frontal side impact & Whipping test.",
-      imgUrl: "/logos/Rectangle 23951jac.svg",
-      gear: "Automatic",
-      door: 5,
-      people: 6,
-      price: 2700
-    },
 ]
 
-const nav = [
-    { id: 1, link: "", title: "About" },
-    { id: 2, link: "", title: "Offers" },
-    { id: 3, link: "", title: "Corporate" },
-    { id: 4, link: "", title: "Personal" },
-    { id: 5, link: "", title: "Location" },
-    { id: 6, link: "", title: "Contact Us" },
+
+// List of al habtoor companies
+const companies = [
+  { id: 1, name: "Hospitality", link: "" },
+  { id: 2, name: "Real Estate", link: "" },
+  { id: 3, name: "Publishing", link: "" },
+  { id: 4, name: "Automotive", link: "" },
+  { id: 5, name: "Vehicle Leasing", link: "" },
 ]
 
-  const socialLinksNav = [
-    { id: 1, name: "facebook", imgUrl: 'logos/Vectorfacebook.svg', url: 'https://www.facebook.com/' },
-    { id: 2, name: "Instagram", imgUrl: 'logos/Vectorinsta.svg', url: "https://www.instagram.com/" },
-    { id: 3, name: "twitter", imgUrl: 'logos/layer1x-twitter.svg', url: 'https://x.com/' },
-    { id: 4, name: "LinkedIn", imgUrl: 'logos/VectorlinkedIn.svg', url: 'https://www.linkedin.com/' },
-  ]
 
-
+// Social media links for footer
+const socialLinksFooter = [
+  { id: 1, name: "facebook", imgUrl: 'logos/Social IconsfacebookLight.svg', url: 'https://www.facebook.com/' },
+  { id: 2, name: "twitter", imgUrl: 'logos/Social IconsxtwitterLight.svg', url: 'https://x.com/' },
+  { id: 3, name: "Instagram", imgUrl: 'logos/Social IconsinstagramLight.svg', url: "https://www.instagram.com/" },
+  { id: 4, name: "LinkedIn", imgUrl: 'logos/Social IconslinkedInLight.svg', url: 'https://www.linkedin.com/' },
+  { id: 5, name: "Youtube", imgUrl: 'logos/Social IconsyoutubeLight.svg', url: 'https://www.youtube.com/' }
+]
 
 export {faqs, companies, socialLinksFooter, locations, rentLeaseData, slides, popCars, socialLinksNav ,nav}

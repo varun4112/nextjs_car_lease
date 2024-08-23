@@ -15,14 +15,16 @@ interface AccordionProps {
 
 const Accordian: React.FC<AccordionProps> = ({ faqs }) => {
 
-    
+    // state to set active 
     const [active, setActive] = useState<number | null>(null);
+
     const handleToggle = (index: number) => {
         setActive(active === index ? null : index);
     };
 
     return (
         <div className={styles.accordionContainer}>
+            {/* Mapping accordion based on data available in faqs*/}
             {faqs.map((faq: faqInterface, index: number) => (
                 <div key={faq.id} className={styles.accordionBox}>
                     <button
@@ -38,6 +40,7 @@ const Accordian: React.FC<AccordionProps> = ({ faqs }) => {
                             height={24}
                         />
                     </button>
+                    {/* accordion Panel */}
                     <div
                         className={`${styles.panel} ${active === index ? styles.open : ''}`}
                     >
