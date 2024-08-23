@@ -1,19 +1,10 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import styles from "./Slideshow.module.css"
-
+import { slides } from '@/app/libs/placeholder-data';
 
 function SlideShow() {
-
     const [slideIndex, setSlideIndex] = useState<number>(0);
-
-    const slides = [
-        { id: 'slide1', imageUrl: '/logos/Mitsubishi.svg' },
-        { id: 'slide2', imageUrl: '/logos/blue-car-speed-motion-stretch-style.jpg' },
-        { id: 'slide3', imageUrl: '/logos/Mitsubishi.svg' },
-        { id: 'slide4', imageUrl: '/logos/blue-car-speed-motion-stretch-style.jpg' },
-    ];
-
 
     // useEffect to change Slide
     useEffect(() => {

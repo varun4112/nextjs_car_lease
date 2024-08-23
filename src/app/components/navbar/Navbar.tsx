@@ -3,25 +3,10 @@ import React, { useState } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { nav, socialLinksNav } from "@/app/libs/placeholder-data";
 
 function Navbar() {
   const [isSidebarActive, setSidebarActive] = useState<boolean>(false);
-
-  const nav = [
-    { id: 1, link: "", title: "About" },
-    { id: 2, link: "", title: "Offers" },
-    { id: 3, link: "", title: "Corporate" },
-    { id: 4, link: "", title: "Personal" },
-    { id: 5, link: "", title: "Location" },
-    { id: 6, link: "", title: "Contact Us" },
-  ]
-
-  const socialLinks = [
-    { id: 1, name: "facebook", imgUrl: 'logos/Vectorfacebook.svg', url: 'https://www.facebook.com/' },
-    { id: 2, name: "Instagram", imgUrl: 'logos/Vectorinsta.svg', url: "https://www.instagram.com/" },
-    { id: 3, name: "twitter", imgUrl: 'logos/layer1x-twitter.svg', url: 'https://x.com/' },
-    { id: 4, name: "LinkedIn", imgUrl: 'logos/VectorlinkedIn.svg', url: 'https://www.linkedin.com/' },
-  ]
 
   // Toggle sidebar visibility on burger click
   const handleBurgerClick = () => {
@@ -40,7 +25,8 @@ function Navbar() {
           {/* <!-- navbar social media links --> */}
           <div className={styles.navSocial}>
             <ul className={styles.navSocialList}>
-              {socialLinks.map((item) => (
+              {/* mapping from socialLinksNav */}
+              {socialLinksNav.map((item) => (
                 <li className={styles.navSocailLi} key={item.id}>
                   <Link href={item.url}>
                     <Image
@@ -51,11 +37,13 @@ function Navbar() {
                       width={15}
                     />
                   </Link>
-
                 </li>))}
+
             </ul>
           </div>
+
           <div className={styles.navLayer}>
+            {/* Company Logo */}
             <div id="navLogo">
               <Image
                 src="/logos/Layer_1logoMain.png"
@@ -65,6 +53,7 @@ function Navbar() {
                 alt=""
               />
             </div>
+
             {/* <!-- navbar navigation links --> */}
             <div className={styles.navList}>
               <ul className={styles.navLinkList}>
@@ -92,6 +81,8 @@ function Navbar() {
                   </button>
                 </li>
               </ul>
+
+              {/* Hamburger menu */}
               <div className={styles.burger} onClick={handleBurgerClick}>
                 <div className={styles.line}></div>
                 <div className={styles.line}></div>
@@ -99,14 +90,15 @@ function Navbar() {
               </div>
             </div>
           </div>
-          <div className={styles.navDropOff}>
 
+          <div className={styles.navDropOff}>
             <p className={styles.navPara}>
               Sunday Pick Up/Drop-Off only at Dubai Silicon Oasis & Habtoor
               Grand Sales Counters | All Rates inclusive of VAT. T&C’s apply |
               Follow us on Social Media for New Offers
             </p>
           </div>
+
         </div>
 
         {/* <!-- sidebar --> */}

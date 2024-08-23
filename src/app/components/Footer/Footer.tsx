@@ -2,27 +2,9 @@ import Image from "next/image";
 import React from "react";
 import styles from "./Footer.module.css";
 import Link from "next/link";
+import { companies, socialLinksFooter } from "@/app/libs/placeholder-data";
 
 function Footer() {
-
-
-  // siter company data
-  const companies = [
-    { id: 1, name: "Hospitality", link: "" },
-    { id: 2, name: "Real Estate", link: "" },
-    { id: 3, name: "Publishing", link: "" },
-    { id: 4, name: "Automotive", link: "" },
-    { id: 5, name: "Vehicle Leasing", link: "" },
-  ]
-
-  // socail media link with images
-  const socialLinks = [
-    { id: 1, name: "facebook", imgUrl: 'logos/Social IconsfacebookLight.svg', url: 'https://www.facebook.com/' },
-    { id: 2, name: "twitter", imgUrl: 'logos/Social IconsxtwitterLight.svg', url: 'https://x.com/' },
-    { id: 3, name: "Instagram", imgUrl: 'logos/Social IconsinstagramLight.svg', url: "https://www.instagram.com/" },
-    { id: 4, name: "LinkedIn", imgUrl: 'logos/Social IconslinkedInLight.svg', url: 'https://www.linkedin.com/' },
-    { id: 5, name: "Youtube", imgUrl: 'logos/Social IconsyoutubeLight.svg', url: 'https://www.youtube.com/' }
-  ]
 
   return (
     <div>
@@ -36,7 +18,7 @@ function Footer() {
               alt="alhabtoor logo"
             />
             <ul>
-              {socialLinks.map((item) => (
+              {socialLinksFooter.map((item) => (
                 <li key={item.id}>
                   <Link href={item.url}><Image className={styles.blackLogos}
                     src={item.imgUrl}
@@ -142,7 +124,7 @@ function Footer() {
             <div className={styles.col3}>
               <p>Follow us on</p>
               <ul>
-                {socialLinks.map((item) => (
+                {socialLinksFooter.map((item) => (
                   <li key={item.id}>
                     <Link href={item.url}><Image
                       src={item.imgUrl}

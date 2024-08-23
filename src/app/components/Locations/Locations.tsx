@@ -1,11 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
 import styles from "./Locations.module.css"
+import { locations } from '@/app/libs/placeholder-data'
 
 function Locations() {
-
-    const locations = ["Dubai", "Abu Dhabi", "Sharjah", "Fujairah", "Ras Al Khaimah"]
-
     return (
         <div className={styles.location}>
             <h2 className={styles.locationHeadings}>Locations</h2>
